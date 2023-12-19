@@ -1,0 +1,108 @@
+ 
+<div class="card text-center shadow">
+  <div class="card-header">
+    <h2>Ingresar productos</h2>
+  </div>
+  <div class="card-body">
+    <div class="container">
+      <form class="form-horizontal was-validated" action="../Back-end/proceso_guardar.php" method="POST" enctype="multipart/form-data" onsubmit="return verificar();">
+
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <p class="control-label" for="email">Imagen:</p>  
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFileLang"  name="imagen" accept=".jpg" REQUIRED>
+        <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+      </div> 
+    </div> 
+    <div class="col-md-4 mb-3"> 
+      <p class="control-label" for="email">SKU:</p>
+      <input type="text" class="form-control"  REQUIRED name="SKU" id="SKU" placeholder="Ingrese el codigo de barra (NUMEROS)"  onchange="llamarAjaxIndex(this.value,'verificarSKUExistente',null)">
+      <label class="text-danger error" id="errorSKU">*DeYa existe un producto con este codigo, verifique su existencia. </label>
+    </div>  
+    <div class="col-md-4 mb-3">
+    <p class="control-label" for="email">Temporada:</p>
+    <select  type="text" class="form-control"  name="temporada" id="temporada">
+    </select>
+    <label class="text-danger error" id="errorTemporada">*Debes seleccionar una opcion </label>
+    </div>
+  </div>
+
+
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <p class="control-label" for="email" >Categoria:</p>
+      <select  type="text" class="form-control"  name="categoria" id="categoria" onclick="llamarAjaxConsultaVarible('obtenerSubCategorias','#subCategoria',this.value)">
+      </select>
+      <label class="text-danger error" id="errorCategoria">*Debes seleccionar una opcion </label>
+    </div>
+    <div class="col-md-4 mb-3"><p class="control-label" for="subCat">Subcategoria:</p>
+      <select  type="text" class="form-control"  name="subCategoria" id="subCategoria" >
+        <option value="0">Debes seleccionar una categoria</option>
+      </select>
+      <label class="text-danger error" id="errorSubCategoria">*Debes seleccionar una opcion </label>
+    </div>
+    <div class="col-md-4 mb-3">
+      <p class="control-label" for="especificacion">Especificacion:</p>
+      <input type="text" class="form-control" REQUIRED name="especificacion" id="especificacion" placeholder="Ingrese el material del producto">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <p class="control-label">Disponibilidad:</p>
+      <select  type="text" class="form-control"  name="disponibilidad" id="disponibilidad">
+        <option value="0">Seleccione una opcion</option>
+        <option value="1">Disponible</option>
+        <option value="2">Agotado</option>
+      </select>
+      <label class="text-danger error" id="errorDisponibilidad">*Debes seleccionar una opcion </label>
+    </div>
+    <div class="col-md-4 mb-3">
+      <p class="control-label" >Unidad de medida:</p>
+      <select  type="text" class="form-control"  name="uMedida" id="uMedida">
+      </select>
+      <label class="text-danger error" id="erroruMedida">*Debes seleccionar una opcion </label>
+    </div>
+    <div class="col-md-4 mb-3">
+      <p class="control-label">Cantidad:</p>
+      <input type="number" class="form-control" REQUIRED name="cantidad" id="cantidad" placeholder="Ej: Polera, Sudadera, Calza, etc">
+    </div>
+  </div>   
+  <div class="form-row">
+    <div class="col-md-4 mb-3"> 
+      <p class="control-label">Precio:</p>
+      <input type="number" class="form-control" REQUIRED name="precio" id="precio" placeholder="Ingrese el valor de venta">
+    </div>
+    <div class="col-md-4 mb-3">
+      <p class="control-label" for="descuento">Descuento:</p>
+      <input type="number" class="form-control" REQUIRED name="descuento" id="descuento" placeholder="Ingrese el descuento a aplicar en porcentaje (Solo numeros)">
+    </div>
+  </div><button type="submit" class="btn btn-success">Ingresar</button>
+</form>
+        
+
+        
+
+       
+
+        
+
+        
+
+
+        
+    </div>
+                </div>
+                <div class="card-footer text-muted">
+                  
+                </div>
+            </div>
+            <div class="line"></div>
+
+<script type="text/javascript">
+  $.getScript("../JScript/AJAX.js");
+   llamarAjaxConsulta("obtenerCategorias","#categoria");
+   llamarAjaxConsulta("obtenerTemporada","#temporada");
+   llamarAjaxConsulta("obtenerUnidades","#uMedida")
+</script>

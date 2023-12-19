@@ -1,0 +1,30 @@
+<form action="../Back-end/resumenPDF.php" method="POST" target="_blank">   
+<div class="card text-center shadow">
+  <div class="card-header">
+    <h5>Fecha</h5>
+  </div>
+  <div class="card-body">
+
+      <div class="row">
+        <div class="col-6">
+          <label for="sel1">Seleccione la fecha de inicio</label>
+          <input type="date" class="form-control" name="fechaIni" id="fechaIni" required>
+          <label for="sel1">Seleccione la hora de inicio</label>
+          <input type="time" class="form-control" name="horaIni" id="horaIni" required>
+        </div>
+        <div class="col-6">
+          <label for="sel1">Seleccione la fecha de termino</label>
+          <input type="date" class="form-control" name="fechaTerm" id="fechaTerm" required>
+          <label for="sel1">Seleccione la hora de termino</label>
+          <input type="time" class="form-control" name="horaTerm" id="horaTerm" required>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+        <button type="submit" class="btn btn-success">Ver resumen <i class="fa fa-file-pdf-o" style="font-size:20px"></i></button>
+    </div>
+  </form>
+</div>
+<div class="line"></div>
+<div id="divPedidos"></div>
+

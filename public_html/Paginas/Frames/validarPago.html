@@ -1,0 +1,18 @@
+   
+<div class="card text-center shadow">
+  <div class="card-header">
+    <h5>Usuarios pendientes</h5>
+  </div>
+  <div class="card-body">
+    <div id="validarPedido" ></div>
+  </div>
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
+<div class="line"></div>
+<div id="divPedidos"></div>
+<script type="text/javascript">
+  $.getScript("../JScript/AJAX.js");
+  llamarAjaxConsulta("obtenerPedidosDelDiaPorValidar","#validarPedido");
+</script>

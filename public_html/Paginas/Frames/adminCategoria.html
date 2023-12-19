@@ -1,0 +1,52 @@
+<div class="card text-center shadow">
+  <div class="card-header">
+    <h2>Administrar categorias</h2>
+  </div>
+  <div class="card-body">
+     <div class="card-group ">
+        <div class="col-sm-6">
+            <div class="card shadow">
+              <p class="text-center m-2"><i class="fa fa-plus-square" style="font-size:120px"></i></p>
+              <div class="card-body">
+                <p class="card-title text-center">Insertar categoria</p>
+                <form  onsubmit="return false">
+                    <label>Nombre: </label>
+                    <input type="text" class="form-control" REQUIRED name="nombCat" id="nombCat" placeholder="Ejemplo: Fruta">
+                    <br>
+                    <button type="submit" class="btn btn-sm btn-outline-success btn-block" id="btnInsertarCat" role="button" onclick="insertarCat();">
+                      <i  class="fa fa-plus"></i>
+                    </button>
+                </form>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card shadow">
+            <p class="text-center m-2"><i class="fa  fa-trash" style="font-size:120px"></i></p>
+            <form onsubmit="return false">
+            <div class="card-body">
+              <p class="card-title text-center">Borrar categoria</p>
+                  <div class="form-group">
+                    <label for="sel1">Seleccione la categoria a eliminar</label>
+                    <select type="text" name="categoria" class="form-control" id="categoria">
+                    </select>
+                  </div>
+                  <button type="submit"  class="btn btn-sm btn-outline-success btn-block" role="button" id="btnBorrarCat" onclick="borrarCat()">
+                      <i  class="fa fa-trash"></i>
+                    </button>
+                  
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="card-footer text-muted">
+      
+  </div>
+</div>
+<div class="line"></div>
+<script type="text/javascript">
+  $.getScript("../JScript/AJAX.js");
+   llamarAjaxConsulta("obtenerCategorias","#categoria");
+</script>

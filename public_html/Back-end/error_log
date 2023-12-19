@@ -1,0 +1,12 @@
+[25-Jan-2019 20:52:37 UTC] PHP Deprecated:  Non-static method conexion::conectar() should not be called statically in /home/agrofrez/public_html/Back-end/queryAjax.php on line 8
+[25-Jan-2019 20:52:37 UTC] PHP Notice:  Undefined index: correoAgrofrez in /home/agrofrez/public_html/Back-end/queryAjax.php on line 72
+[25-Jan-2019 20:52:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_fetch_all() in /home/agrofrez/public_html/Back-end/queryAjax.php:123
+Stack trace:
+#0 {main}
+  thrown in /home/agrofrez/public_html/Back-end/queryAjax.php on line 123
+[25-Jan-2019 20:52:41 UTC] PHP Deprecated:  Non-static method conexion::conectar() should not be called statically in /home/agrofrez/public_html/Back-end/queryAjax.php on line 8
+[25-Jan-2019 20:52:41 UTC] PHP Notice:  Undefined index: correoAgrofrez in /home/agrofrez/public_html/Back-end/queryAjax.php on line 72
+[25-Jan-2019 20:52:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_fetch_all() in /home/agrofrez/public_html/Back-end/queryAjax.php:123
+Stack trace:
+#0 {main}
+  thrown in /home/agrofrez/public_html/Back-end/queryAjax.php on line 123

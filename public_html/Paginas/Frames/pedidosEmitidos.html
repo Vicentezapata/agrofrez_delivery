@@ -1,0 +1,20 @@
+   
+<div class="card text-center shadow">
+  <div class="card-header">
+    <h5>Fecha</h5>
+  </div>
+  <div class="card-body">
+    <label for="sel1">Seleccione la fecha a consultar</label>
+    <select type="text" name="fecha" class="form-control" id="fecha" onclick="llamarAjaxConsultaVarible('obtenerPedidosDelDia','#divPedidos',this.value)">
+    </select>
+  </div>
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
+<div class="line"></div>
+<div id="divPedidos"></div>
+<script type="text/javascript">
+  $.getScript("../JScript/AJAX.js");
+  llamarAjaxConsulta("obtenerDiasPedidos","#fecha");
+</script>

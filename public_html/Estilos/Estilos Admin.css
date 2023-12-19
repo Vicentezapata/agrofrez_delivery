@@ -1,0 +1,50 @@
+.file {
+  visibility: hidden;
+  position: absolute;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #fff;
+}
+.input-group-addon {
+	    background-color: #fff;
+ }
+ .btn.btn-primary {
+    background-color: #6295a6;
+    border-color: #6295a6;
+  outline: none;
+
+}
+ .btn-primary:hover {
+    background-color: rgb(0,73,79);
+    border-color: rgb(0,73,79);
+ }
+ #talla{
+    margin-left: 0px;
+}
+body {
+  background     :rgb(98,149,166); 
+  margin: 50px;
+}
+.container {
+  background-color: #fff;
+  padding: 40px 80px;
+  border-radius: 8px;
+}
+h1 {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 0 0 5px 0;
+  background: -webkit-linear-gradient(#fff, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+h4 {
+  color: lighten(#5c3d86,30%);
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 35px 0;
+}
+

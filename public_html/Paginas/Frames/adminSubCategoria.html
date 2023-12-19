@@ -1,0 +1,63 @@
+<div class="card text-center shadow">
+  <div class="card-header">
+    <h2>Administrar subcategorias</h2>
+  </div>
+  <div class="card-body">
+     <div class="card-group ">
+        <div class="col-sm-6">
+            <div class="card shadow">
+              <p class="text-center m-2"><i class="fa fa-plus-square" style="font-size:120px"></i></p>
+              <div class="card-body">
+                <p class="card-title text-center">Insertar subcategoria</p>
+                <form  onsubmit="return false">
+                    <div class="form-group">
+                      <label for="sel1">Seleccione la categoria a la que pertenece</label>
+                      <select type="text" name="categoria" class="form-control" id="categoria">
+                      </select>
+                    </div>
+                    <label>Nombre: </label>
+                    <input type="text" class="form-control" REQUIRED name="nombSubCat" id="nombSubCat" placeholder="Ejemplo: Manzana">
+                    <br>
+                    <button type="submit" class="btn btn-sm btn-outline-success btn-block" id="btnInsertarSubCat" role="button" onclick="insertarSubCat();">
+                      <i  class="fa fa-plus"></i>
+                    </button>
+                </form>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card shadow">
+            <p class="text-center m-2"><i class="fa  fa-trash" style="font-size:120px"></i></p>
+            <form onsubmit="return false">
+            <div class="card-body">
+              <p class="card-title text-center">Eliminar subcategoria</p>
+                  <div class="form-group">
+                    <label for="sel1">Seleccione la categoria a la que pertenece</label>
+                    <select type="text" name="categoriaBorrar" class="form-control" id="categoriaBorrar"  onclick="llamarAjaxConsultaVarible('obtenerSubCategorias','#subCategoria',this.value)">
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="sel1">Seleccione la subcategoria a eliminar</label>
+                    <select type="text" name="subCategoria" class="form-control" id="subCategoria">
+                    </select>
+                  </div>
+                  <button type="submit"  class="btn btn-sm btn-outline-success btn-block" role="button" id="btnBorrarSubCat" onclick="borrarSubCat()">
+                      <i  class="fa fa-trash"></i>
+                    </button>
+                  
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="card-footer text-muted">
+      
+  </div>
+</div>
+<div class="line"></div>
+<script type="text/javascript">
+  $.getScript("../JScript/AJAX.js");
+   llamarAjaxConsulta("obtenerCategorias","#categoria");
+   llamarAjaxConsulta("obtenerCategorias","#categoriaBorrar");
+</script>

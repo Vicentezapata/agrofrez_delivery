@@ -1,0 +1,72 @@
+      
+<div class="card text-center shadow">
+  <div class="card-header">
+    <h2>Consultar producto</h2>
+  </div>
+  <div class="card-body">
+     <div class="card-group ">
+        <div class="col-sm-6">
+            <div class="card shadow">
+              <p class="text-center m-2"><i class="fa fa-barcode" style="font-size:120px"></i></p>
+              <div class="card-body">
+                <p class="card-title text-center">Busqueda por codigo SKU</p>
+                <form  onsubmit="return false">
+                    <label>SKU: </label>
+                    <input type="text" class="form-control" REQUIRED name="SKU" id="SKU" placeholder="Ejemplo: 111111">
+                    <br>
+                    <button type="submit" class="btn btn-sm btn-outline-success btn-block" id="btnConsultarSkuAct" role="button">
+                      <i  class="fa fa-search"></i>
+                    </button>
+                </form>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card shadow">
+            <p class="text-center m-2"><i class="fa  fa-lemon-o" style="font-size:48px"></i></p>
+            <form onsubmit="return false">
+            <div class="card-body">
+              <p class="card-title text-center">Busqueda por producto</p>
+                  <div class="form-group">
+                    <label for="sel1">Seleccione la categoria del producto</label>
+                    <select type="text" name="categoria" class="form-control" id="categoria" onclick="llamarAjaxConsultaVarible('obtenerSubCategorias','#subCategoria',this.value)">
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Seleccione la subcategoria</label>
+                    <select type="text" name="subCategoria" class="form-control" id="subCategoria" onclick="llamarAjaxConsultaVarible('obtenerEspecificacion','#especificacion',this.value)">
+                      <option value="0">Debes seleccionar una categoria</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Seleccione la especificacion</label>
+                    <select type="text" name="especificacion" class="form-control" id="especificacion" >
+                      <option value="0">Debes seleccionar una categoria</option>
+                    </select>
+                  </div>
+                  <button type="submit"  class="btn btn-sm btn-outline-success btn-block" role="button" id="btnConsultarAct">
+                      <i  class="fa fa-search"></i>
+                    </button>
+                  
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="card-footer text-muted">
+      
+  </div>
+</div>
+<div class="line"></div>
+<script type="text/javascript">
+  $.getScript("../JScript/AJAX.js");
+   llamarAjaxConsulta("obtenerCategorias","#categoria");
+  function mostrarDescuento(){
+    var precio = $('#precioAct').val();
+    var descuento = $('#descuentoAct').val();
+    var pfinal=precio*(1-((descuento*1.0)/100));
+    $('#pfinal').val(Math.round(pfinal));
+
+   }
+</script>
